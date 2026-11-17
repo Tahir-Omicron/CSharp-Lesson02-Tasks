@@ -19,15 +19,8 @@ namespace CalculatorApp
             return a * b;
         }
 
-        public double Bol(double a, double b, out bool ugurlu)
+        public double Bol(double a, double b)
         {
-            if (b == 0)
-            {
-                ugurlu = false;
-                return 0;
-            }
-
-            ugurlu = true;
             return a / b;
         }
     }
@@ -65,10 +58,15 @@ namespace CalculatorApp
                     break;
 
                 case '/':
-                    netice = calc.Bol(eded1, eded2, out duzgundur);
-                    if (!duzgundur)
+                    // Sıfıra bölmə yoxlanışını adi if ilə edirik
+                    if (eded2 == 0)
                     {
                         Console.WriteLine("Xəta: Sıfıra bölmək olmaz.");
+                        duzgundur = false;
+                    }
+                    else
+                    {
+                        netice = calc.Bol(eded1, eded2);
                     }
                     break;
 

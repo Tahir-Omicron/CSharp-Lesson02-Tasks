@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace CalculatorApp
 {
@@ -58,7 +58,6 @@ namespace CalculatorApp
                     break;
 
                 case '/':
-                    // Sıfıra bölmə yoxlanışını adi if ilə edirik
                     if (eded2 == 0)
                     {
                         Console.WriteLine("Xəta: Sıfıra bölmək olmaz.");

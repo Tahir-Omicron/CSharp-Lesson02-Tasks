@@ -2,35 +2,10 @@ using System;
 
 namespace CalculatorApp
 {
-    class Calculator
-    {
-        public double Topla(double a, double b)
-        {
-            return a + b;
-        }
-
-        public double Cix(double a, double b)
-        {
-            return a - b;
-        }
-
-        public double Vur(double a, double b)
-        {
-            return a * b;
-        }
-
-        public double Bol(double a, double b)
-        {
-            return a / b;
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
         {
-            Calculator calc = new Calculator();
-
             Console.Write("Birinci ədədi daxil edin: ");
             double eded1 = Convert.ToDouble(Console.ReadLine());
 
@@ -46,15 +21,15 @@ namespace CalculatorApp
             switch (emeliyyat)
             {
                 case '+':
-                    netice = calc.Topla(eded1, eded2);
+                    netice = eded1 + eded2;
                     break;
 
                 case '-':
-                    netice = calc.Cix(eded1, eded2);
+                    netice = eded1 - eded2;
                     break;
 
                 case '*':
-                    netice = calc.Vur(eded1, eded2);
+                    netice = eded1 * eded2;
                     break;
 
                 case '/':
@@ -65,7 +40,7 @@ namespace CalculatorApp
                     }
                     else
                     {
-                        netice = calc.Bol(eded1, eded2);
+                        netice = eded1 / eded2;
                     }
                     break;
 

@@ -2,107 +2,102 @@
 
 namespace QuizApp
 {
-    class Question
-    {
-        public string Metn { get; set; }
-        public string VariantA { get; set; }
-        public string VariantB { get; set; }
-        public string VariantC { get; set; }
-        public string DuzgunVariant { get; set; }
-
-        public Question(string metn, string va, string vb, string vc, string duzgun)
-        {
-            Metn = metn;
-            VariantA = va;
-            VariantB = vb;
-            VariantC = vc;
-            DuzgunVariant = duzgun;
-        }
-
-        public void CapEt()
-        {
-            Console.WriteLine(Metn);
-            Console.WriteLine(VariantA);
-            Console.WriteLine(VariantB);
-            Console.WriteLine(VariantC);
-        }
-
-        public bool Yoxla(string cavab)
-        {
-            return cavab.ToLower().Trim() == DuzgunVariant.ToLower().Trim();
-        }
-    }
-
     class Program
     {
-        static void SualiVer(Question q, ref int duzgun, ref int sehv)
+        static void Main(string[] args)
         {
-            q.CapEt();
-            Console.Write("Cavabınız: ");
-            string cavab = Console.ReadLine();
+            int duzgun = 0;
+            int sehv = 0;
 
-            if (q.Yoxla(cavab))
+            Console.WriteLine("1. int, double, bool tipləri yaddaşın hansı hissəsində saxlanılır?");
+            Console.WriteLine("a) Heap");
+            Console.WriteLine("b) Stack");
+            Console.WriteLine("c) Disk");
+            Console.Write("Cavabınız: ");
+            string c1 = Console.ReadLine().ToLower().Trim();
+
+            if (c1 == "b")
             {
                 Console.WriteLine("Doğrudur.\n");
                 duzgun++;
             }
             else
             {
-                Console.WriteLine($"Səhvdir. Düzgün cavab: {q.DuzgunVariant}\n");
+                Console.WriteLine("Səhvdir. Düzgün cavab: b\n");
                 sehv++;
             }
-        }
 
-        static void Main(string[] args)
-        {
-            int duzgun = 0;
-            int sehv = 0;
+            Console.WriteLine("2. Console.ReadLine() daxil edilən məlumatı hansı tipdə qaytarır?");
+            Console.WriteLine("a) int");
+            Console.WriteLine("b) object");
+            Console.WriteLine("c) string");
+            Console.Write("Cavabınız: ");
+            string c2 = Console.ReadLine().ToLower().Trim();
 
-            Question q1 = new Question(
-                "1. int, double, bool tipləri yaddaşın hansı hissəsində saxlanılır?",
-                "a) Heap",
-                "b) Stack",
-                "c) Disk",
-                "b"
-            );
+            if (c2 == "c")
+            {
+                Console.WriteLine("Doğrudur.\n");
+                duzgun++;
+            }
+            else
+            {
+                Console.WriteLine("Səhvdir. Düzgün cavab: c\n");
+                sehv++;
+            }
 
-            Question q2 = new Question(
-                "2. Console.ReadLine() daxil edilən məlumatı hansı tipdə qaytarır?",
-                "a) int",
-                "b) object",
-                "c) string",
-                "c"
-            );
+            Console.WriteLine("3. Reference Type-lar default olaraq hansı dəyəri alır?");
+            Console.WriteLine("a) 0");
+            Console.WriteLine("b) false");
+            Console.WriteLine("c) null");
+            Console.Write("Cavabınız: ");
+            string c3 = Console.ReadLine().ToLower().Trim();
 
-            Question q3 = new Question(
-                "3. Reference Type-lar default olaraq hansı dəyəri alır?",
-                "a) 0",
-                "b) false",
-                "c) null",
-                "c"
-            );
+            if (c3 == "c")
+            {
+                Console.WriteLine("Doğrudur.\n");
+                duzgun++;
+            }
+            else
+            {
+                Console.WriteLine("Səhvdir. Düzgün cavab: c\n");
+                sehv++;
+            }
 
-            Question q4 = new Question(
-                "4. Parse ilə TryParse arasındakı əsas fərq nədir?",
-                "a) Parse xəta olanda exception atır, TryParse isə false qaytarır",
-                "b) Fərqləri yoxdur",
-                "c) TryParse yalnız string üçündür",
-                "a"
-            );
+            Console.WriteLine("4. Parse ilə TryParse arasındakı əsas fərq nədir?");
+            Console.WriteLine("a) Parse xəta olanda exception atır, TryParse isə false qaytarır");
+            Console.WriteLine("b) Fərqləri yoxdur");
+            Console.WriteLine("c) TryParse yalnız string üçündür");
+            Console.Write("Cavabınız: ");
+            string c4 = Console.ReadLine().ToLower().Trim();
 
-            Question q5 = new Question(
-                "5. Məlumatı ekrana çıxarıb yeni sətrə keçən metod hansıdır?",
-                "a) Console.Write()",
-                "b) Console.WriteLine()",
-                "c) Console.ReadLine()",
-                "b"
-            );
+            if (c4 == "a")
+            {
+                Console.WriteLine("Doğrudur.\n");
+                duzgun++;
+            }
+            else
+            {
+                Console.WriteLine("Səhvdir. Düzgün cavab: a\n");
+                sehv++;
+            }
 
-            SualiVer(q1, ref duzgun, ref sehv);
-            SualiVer(q2, ref duzgun, ref sehv);
-            SualiVer(q3, ref duzgun, ref sehv);
-            SualiVer(q4, ref duzgun, ref sehv);
-            SualiVer(q5, ref duzgun, ref sehv);
+            Console.WriteLine("5. Məlumatı ekrana çıxarıb yeni sətrə keçən metod hansıdır?");
+            Console.WriteLine("a) Console.Write()");
+            Console.WriteLine("b) Console.WriteLine()");
+            Console.WriteLine("c) Console.ReadLine()");
+            Console.Write("Cavabınız: ");
+            string c5 = Console.ReadLine().ToLower().Trim();
+
+            if (c5 == "b")
+            {
+                Console.WriteLine("Doğrudur.\n");
+                duzgun++;
+            }
+            else
+            {
+                Console.WriteLine("Səhvdir. Düzgün cavab: b\n");
+                sehv++;
+            }
 
             Console.WriteLine($"Nəticə -> Düzgün: {duzgun}, Səhv: {sehv}");
         }
